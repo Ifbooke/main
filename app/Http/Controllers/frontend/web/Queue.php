@@ -12,8 +12,7 @@ class Queue extends Controller
 {
     public function index()
     {
-        $con = new MongoClient('localhost:27017');
-
+        $con = new MongoClient('localhost:27017')
         $db = $con->mains->tops->find();
         print_r($db);
     }

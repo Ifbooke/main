@@ -17,6 +17,7 @@
     <link rel="shortcut icon" href="http://static.hdslb.com/images/favicon.ico">
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url('/static/community/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url('/static/frontend/web/css/animate.min.css') }}">
     <link rel="stylesheet" href="{{ url('/static/frontend/web/css/nav.css') }}">
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>

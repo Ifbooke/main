@@ -1,0 +1,87 @@
+
+
+
+
+
+/*=========公共===========*/
+.row div span:nth-child(2) a {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.2;
+    color: #333333;
+    text-decoration: none;
+    font-family: Microsoft Yahei;
+}
+.row div span:nth-child(2) a:hover {
+    color: #EA252C;
+}
+.row div span:nth-child(3) {
+    display: block;
+    margin: 0px 0px 10px 0px;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #777;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: arial, helvetica, sans-serif;
+}
+
+/*==========头部============*/
+.row:nth-child(1) div {
+    width: 573px;
+    margin-left: 20px;
+}
+.row:nth-child(1) div img {
+    width: 573px;
+    height: 330px;
+    cursor: pointer;
+}
+.row:nth-child(1) div:nth-child(1) {
+    margin-left: 0px;
+}
+.row:nth-child(1) div:nth-child(2) {
+    margin-right: 0px;
+}
+.row:nth-child(1) div span:nth-child(2) {
+    display: block;
+    margin-top: 1%;
+    width: 580px;
+}
+
+/*========中部=========*/
+.row:nth-child(2) div {
+    width: 376px;
+    margin-left: 20px;
+}
+.row:nth-child(2) div:nth-child(1){
+    margin-left: 0px;
+}
+.row:nth-child(2) div img {
+    width: 378px;
+    height: 215px;
+    cursor: pointer;
+}
+.row:nth-child(2) div span:nth-child(2) {
+    display: block;
+    margin-top: 2%;
+    width: 380px;
+}
+
+/*=======底部=========*/
+.row:nth-child(3) div {
+    width: 178px;
+    margin-right: 20px;
+}
+.row:nth-child(3) div img {
+    width: 178px;
+    height: 100px;
+    cursor: pointer;
+}
+.row:nth-child(3) div span:nth-child(2) {
+    display: block;
+    margin-top: 3%;
+    width: 178px;
+}
+
+

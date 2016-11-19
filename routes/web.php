@@ -18,6 +18,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('test', function () {
         return view('frontend.web.test');
     });
+    Route::get('queue', 'frontend\web\Queue@index');
 
 });
 

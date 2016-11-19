@@ -13,6 +13,7 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public $redis;
+    public $mongo;
     public function __construct()
     {
         $this->redis = Redis::connection();

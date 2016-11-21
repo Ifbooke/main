@@ -24,6 +24,7 @@ class Queue extends Controller
 
     public function index()
     {
+<<<<<<< HEAD
         $db = $this->conn->mains->tops->find();
 
         foreach ($db as $k => $v) {
@@ -45,6 +46,11 @@ class Queue extends Controller
 
             $this->sync->insert(array('status' => $status, 'mongo_id' => $v['_id'],));  // 插入同步记录表中
         }
+=======
+        $con = new MongoClient('localhost:27017')
+        $db = $con->mains->tops->find();
+        print_r($db);
+>>>>>>> 97078f142665a8ff7209785173944ac54cfd107b
     }
 
 }

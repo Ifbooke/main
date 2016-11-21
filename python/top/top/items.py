@@ -15,4 +15,5 @@ class TopItem(Item):
     img = Field()
     desc = Field()
     link_url = Field()
+    content = Field()
     pass

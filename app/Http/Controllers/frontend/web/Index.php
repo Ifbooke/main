@@ -9,7 +9,7 @@ class Index extends Controller
 {
     public function index()
     {
-        if (!$this->redis->get('top_news')) {  // 今日头条
+        if ($this->redis->get('top_news')) {  // 今日头条
             $this->redis->set('top_news', json_encode(TopNews::all()->where('status', 1)->toArray()));
         }
         $top_news =  json_decode($this->redis->get('top_news'), true);

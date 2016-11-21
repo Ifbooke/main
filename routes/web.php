@@ -19,6 +19,7 @@ Route::group(['prefix' => '/'], function () {
         return view('frontend.web.test');
     });
     Route::get('queue', 'frontend\web\Queue@index');
+    Route::get('redis', 'sync\SyncRedis@isSyncRedis');
 
 });
 

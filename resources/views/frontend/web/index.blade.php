@@ -12,7 +12,7 @@
                         <div class="col-sm-6 col-md-3">
                             <a href="{{ $c->url }}/{{ $c->id }}"><img src="{{ $c->pic_url }}" alt="{{ $c->title }}"></a>
                             <span><a href="{{ $c->url }}/{{ $c->id }}">{{ str_limit($c->title, 85, '...') }}</a></span>
-                            <span>{{ $c->desc }}</span>
+                            <span>{{ str_limit($c->desc, 35, '...') }}</span>
                         </div>
                     @endforeach
                 </div>
@@ -22,7 +22,7 @@
                         <div class="col-sm-6 col-md-3">
                             <a href="{{ $c->url }}/{{ $c->id }}"><img src="{{ $c->pic_url }}" alt="{{ $c->title }}"></a>
                             <span><a href="{{ $c->url }}/{{ $c->id }}">{{ str_limit($c->title, 55, '...') }}</a></span>
-                            <span>{{ $c->desc }}</span>
+                            <span>{{ str_limit($c->desc, 35, '...') }}</span>
                         </div>
                     @endforeach
                 </div>
@@ -32,7 +32,7 @@
                         <div class="col-sm-6 col-md-3">
                             <a href="{{ $c->url }}/{{ $c->id }}"><img src="{{ $c->pic_url }}" alt="{{ $c->title }}"></a>
                             <span><a href="{{ $c->url }}/{{ $c->id }}">{{ str_limit($c->title, 25, '...') }}</a></span>
-                            <span>{{ $c->desc }}</span>
+                            <span>{{ str_limit($c->desc, 35, '...') }}</span>
                         </div>
                     @endforeach
                 </div>

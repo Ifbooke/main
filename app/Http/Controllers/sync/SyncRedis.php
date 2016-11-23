@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers\sync;
 
-use App\Http\Model\frontend\web\ScrapySync;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Model\frontend\web\RedisSync;
-
-$s = new SyncRedis();
-$s->isSyncRedis();
 
 class SyncRedis extends Controller
 {
@@ -24,6 +20,8 @@ class SyncRedis extends Controller
     // 记录队列同步信息
     public function isSyncRedis()
     {
+        set_time_limit(0); // 不超时
+
         while (true) {
             $this->sgnal = $this->redis->rpop('mongo');
 

@@ -7,7 +7,6 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 use App\Http\Model\frontend\web\Menu;
-use Illuminate\Support\Facades\Redis;
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

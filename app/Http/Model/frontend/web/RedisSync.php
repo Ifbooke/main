@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class RedisSync extends Model
 {
-    protected $table = 'redis_syce';
+    protected $table = 'redis_sync';
     public $timestamps = false;
 }

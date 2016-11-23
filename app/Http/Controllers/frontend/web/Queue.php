@@ -24,6 +24,7 @@ class Queue extends Controller
 
     public function index()
     {
+        ini_set('memory_limit', '10000M');
         $db = $this->conn->mains->tops->find();
 
         foreach ($db as $k => $v) {

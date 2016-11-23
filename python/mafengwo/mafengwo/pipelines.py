@@ -17,7 +17,5 @@ class MafengwoPipeline(object):
         self.collection = db[settings['MONGODB_COLLECTION']]
 
     def process_item(self, item, spider):
-        for data in item:
-            if data:
-                self.collection.insert(dict(item))
+        self.collection.insert(dict(item))
         return item

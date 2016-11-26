@@ -24,26 +24,30 @@ class Queue extends Controller
 
     public function index()
     {
-        ini_set('memory_limit', '10000M');
-        $db = $this->conn->mains->tops->find();
-
-        foreach ($db as $k => $v) {
-            $mongo_array['title'] =  $v['title'];
-            $mongo_array['desc'] =  $v['desc'];
-            $mongo_array['url'] =  '/top';
-            $mongo_array['pic_url'] =  $v['pic_url'];
-            $mongo_array['sign'] =  3;
-            $mongo_array['content'] = implode(' ', $v['content']);
-
-            if ($this->top->insert($mongo_array)) {
-                $status = true; // 同步成功
-                $this->conn->mains->tops->remove(array('_id' => $v['_id']), array('_id')); // 删除Mongo数据
-                $this->redis->lpush('mongo', $mongo_array['title']); // 同步到Redis
-            } else {
-                $status  = false; // 同步失败
+        while (true) {
+            $db = $this->conn->mains->tops->find()->limit(3);
+            if (!$db) {
+                exit;
             }
 
-            $this->sync->insert(array('status' => $status, 'mongo_id' => $v['_id']));  // 插入同步记录表中
+            foreach ($db as $k => $v) {
+                $mongo_array['title'] = $v['title'];
+                $mongo_array['desc'] = $v['desc'];
+                $mongo_array['url'] = '/top';
+                $mongo_array['pic_url'] = $v['pic_url'];
+                $mongo_array['sign'] = 3;
+                $mongo_array['content'] = implode(' ', $v['content']);
+
+                if ($this->top->insert($mongo_array)) {
+                    $status = true; // 同步成功
+                    $this->conn->mains->tops->remove(array('_id' => $v['_id']), array('_id')); // 删除Mongo数据
+                    $this->redis->lpush('mongo', $mongo_array['title']); // 同步到Redis
+                } else {
+                    $status = false; // 同步失败
+                }
+
+                $this->sync->insert(array('status' => $status, 'mongo_id' => $v['_id']));  // 插入同步记录表中
+            }
         }
     }
 }
